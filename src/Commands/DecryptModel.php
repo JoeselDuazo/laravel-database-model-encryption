@@ -75,7 +75,7 @@ class DecryptModel extends Command
 
            if($raw === null || $raw==="" ) continue;
 
-            if (!str_contains($raw, \Crypt::getKey())) {
+               if (str_contains($raw, \Crypt::getKey())) {
 
                 $encryptedFields[$attribute] = $this->model->decryptAttribute($raw);
             }
