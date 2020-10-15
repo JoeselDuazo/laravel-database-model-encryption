@@ -71,6 +71,6 @@ trait EncryptableAttribute {
     
     public function getEncryptableAttributes()
     {
-        return  $this->encryptable;
+       return  $this->encryptable ?? [];
     }
 }
