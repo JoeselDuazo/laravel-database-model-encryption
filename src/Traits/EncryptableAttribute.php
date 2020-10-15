@@ -68,4 +68,9 @@ trait EncryptableAttribute {
     {
         return $value ? Encrypter::encrypt($value) : '';
     }
+    
+    public function getEncryptableAttributes()
+    {
+        return  $this->encryptable;
+    }
 }
