@@ -73,7 +73,9 @@ class DecryptModel extends Command
         foreach ($this->attributes as $attribute) {
             $raw = $record->{$attribute};
 
-            if (str_contains($raw, $record->encrypter()->getPrefix())) {
+           if($raw === null || $raw==="" ) continue;
+
+               if (str_contains($raw, \Crypt::getKey())) {
 
                 $encryptedFields[$attribute] = $this->model->decryptAttribute($raw);
             }
